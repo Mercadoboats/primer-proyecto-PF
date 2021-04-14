@@ -1,0 +1,24 @@
+{
+  "name": "primer-proyecto-pf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mercadoboats/primer-proyecto-PF.git"
+  },
+  "author": "Gonzalo Cosentino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mercadoboats/primer-proyecto-PF/issues"
+  },
+  "homepage": "https://github.com/Mercadoboats/primer-proyecto-PF#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-validator": "^6.10.0"
+  }
+}
