@@ -1,29 +1,8 @@
 const express=require('express');
 const router=express.Router();
 const {check,validationResult}=require('express-validator');
+const productos=require('./ListaProductos');
 
-const  productos=[
-    {
-      id:0,
-      timestamp:Date.now(),
-      nombre:'El señor de los anillos',
-      descripcion:'Sarasa',
-      codigo:01,
-      url:'',
-      precio:150,
-      stock:5
-    },
-    {
-        id:1,
-        timestamp:Date.now(),
-        nombre:'Iron Man',
-        descripcion:'Basado en....',
-        codigo:02,
-        url:'',
-        precio:200,
-        stock:10
-      }
-];
 
 
 //Listar todos los productos
@@ -94,11 +73,11 @@ check('stock').toInt()
 
     if(!error.isEmpty())
     {
-        return res.send(400).jason({error:error.array()})
+        return res.send(400).json({error:error.array()})
     }
 
 
-    const producto=prodcutos.find(producto=>producto.id === parseInt(req.params.id))
+    const producto=productos.find.find(producto=>producto.id === parseInt(req.params.id))
 
     if(!producto)
     {

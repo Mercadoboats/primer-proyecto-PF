@@ -1,19 +1,17 @@
 const express= require('express');
-const productos=require('./producto');
+const productos=require('./ListaProductos');
 const router=express.Router();
 
 
-carritoProductos=[{
-
-}];
+const carritoProductos=[];
 
 //Se listan todos los productos en el carrito
 router.get('/listar',(req,res)=>{
-    if(!carritoProductos)
-    {
-        return res.status(400).send('No hay productos en el carrito');
-    }
-    res.status(200).send(carrito)
+
+        
+   
+    res.status(200).send(carritoProductos)
+    
 
 });
 
@@ -30,30 +28,22 @@ router.get('/listar/:id',(req,res)=>{
 
 });
 
-router.post('/agregar/id',(req,res)=>{
-    const producto=prodcutos.find(producto=>producto.id === parseInt(req.params.id))
+router.post('/agregar/:id',(req,res)=>{
+
+    const productoCarrito=productos.find(producto=>producto.id === parseInt(req.params.id))
     
 
-    if(!carrito)
+  if(!productoCarrito)
     {
         return res.status(400).send('No existe el producto que queres agregar al carrito');
     }else{
 
-        const producto={
-            id:producto.id,
-            timestamp:Date.now(),
-            nombre:producto.nombre,
-            descripcion:producto.descripcion,
-            codigo:producto.codigo,
-            url:producto.url,
-            precio:producto.precio,
-            stock:producto.stock
-        }
+       
     
-        carritoProductos.push(producto)
+        carritoProductos.push(productoCarrito)
     
         
-        res.status(200).send('Producto agregado correctamente');
+        res.status(200).send('Producto enviado');
     }
      
 
