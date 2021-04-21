@@ -16,15 +16,17 @@ router.get('/listar',(req,res)=>{
 });
 
 router.get('/listar/:id',(req,res)=>{
-    const carrito=carritoProductos.find(carrito=>carrito.id === parseInt(req.params.id))
+    const carrito=carritoProductos.find(producto=>producto.id === parseInt(req.params.id))
 
     if(!carrito)
     {
-        res.status(400).send('El producto no esta en el carrito');
-    }
+       return res.status(400).send('El producto no esta en el carrito');
+    }else
+    {
 
    
-    res.send(200).send(carrito);
+    res.status(200).send(carrito);
+    }
 
 });
 

@@ -12,7 +12,7 @@ router.get('/listar/',(req,res)=>{
     
 
 });
-//Listar un prodcuto por su id
+//Listar un producto por su id
 router.get('/listar/:id',(req,res)=>{
     const producto=productos.find(producto=>producto.id === parseInt(req.params.id))
     if(!producto)
